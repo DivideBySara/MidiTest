@@ -33,7 +33,7 @@ namespace MidiTest
         static void Main(string[] args)
         {
             string res = String.Empty;
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "002-TCHAIKOVSKY, Pyotr Ilyich & Rachmaninov - Sleeping Waltz (seq Yogore).mid");
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "002TCHAIKOVSKYPyotrIlyichRachmaninovSleepingWaltzseqYogore.mid");
             string openCommand = "open " + filePath + " alias music";
 
             res = Mci(openCommand);
