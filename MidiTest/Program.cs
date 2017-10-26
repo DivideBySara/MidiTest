@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -32,8 +33,10 @@ namespace MidiTest
         static void Main(string[] args)
         {
             string res = String.Empty;
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "002-TCHAIKOVSKY, Pyotr Ilyich & Rachmaninov - Sleeping Waltz (seq Yogore).mid");
+            string openCommand = "open " + filePath + " alias music";
 
-            res = Mci("open \"M:\\anger.mid\" alias music");
+            res = Mci(openCommand);
             res = Mci("play music");
             Console.ReadLine();    // Pause until return is pressed
             res = Mci("close music");
