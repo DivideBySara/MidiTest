@@ -14,9 +14,8 @@ namespace MidiTest
 
             MidiOutCaps.Mci(openCommand);
             MidiOutCaps.Mci("play music");
-            Console.ReadLine();    // Pause until return is pressed
+            Console.ReadKey();
             MidiOutCaps.Mci("close music");
-
             Console.ReadKey();
         }        
     }
