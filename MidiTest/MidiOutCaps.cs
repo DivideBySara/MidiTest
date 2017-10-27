@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace MidiTest
 {
@@ -19,6 +20,15 @@ namespace MidiTest
         public UInt16 wNotes;
         public UInt16 wChannelMask;
         public UInt32 dwSupport;
-    }
 
+        internal static void Mci(string command)
+        {
+            int returnLength = 256;
+            StringBuilder reply = new StringBuilder(returnLength);
+            mciSendString(command, reply, returnLength, IntPtr.Zero);
+        }
+
+        [DllImport("winmm.dll")]
+        private static extern long mciSendString(string command, StringBuilder returnValue, int returnLength, IntPtr winHandle);
+    }
 }
